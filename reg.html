@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>澳众国际-注册</title>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=0.66,minimum-scale=0.66,maximum-scale=1,user-scalable=yes">
+    <style>
+        body {
+	background: #1B2932;
+	margin: 0px;
+	padding: 0px;
+	background-color: #000000;
+        }
+
+        li {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        img {
+            vertical-align: bottom;
+        }
+
+        a:link {
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        .input-1 {
+            width: 270px;
+            height: 27px;
+        }
+
+        .shuru-1 {
+            width: 90px;
+            height: 27px;
+            line-height: 27px;
+            font-size: 13px;
+            color: #666;
+            text-align: right;
+            float: left;
+        }
+
+        .shuru-2 {
+            width: 270px;
+            height: 27px;
+            float: left;
+        }
+		li{list-sytle:none;}
+		img{border:none:}
+    </style>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        var s = 0;
+        function Login() {
+            var uName = $("#userName").val();
+            var uRealName = $("#realName").val();
+            var mobile = $("#mobile").val();
+            var lpassword = $("#loginPassword").val();
+            var lpassword2 = $("#loginPassword2").val();
+            var bpassword = $("#bankPassword").val();
+            var bpassword2 = $("#bankPassword2").val();
+            var regUName = /^[a-zA-Z0-9_]{6,16}$/;
+            if (!regUName.test(uName)) {
+                alert("请输入用户名,由6-16位的字母、数字、下划线的组成！");
+                return false;
+            }
+            var regRealName = /^[\u4e00-\u9fa5]{2,8}$/;
+            if (!regRealName.test(uRealName)) {
+                alert("请输入真实姓名,由2-8个中文组成！");
+                return false;
+            }
+            var regMobile = /^[\d]{11}$/;
+            if (!regMobile.test(mobile)) {
+                alert("请输入手机号码,由11位数字组成！");
+                return false;
+            }
+            if (lpassword.length > 30 || lpassword.length < 6) {
+                alert("请输入登录6-30位的登录密码");
+                return false;
+
+            }
+            if (lpassword != lpassword2) {
+                alert("两次输入的登录密码不一致");
+                return false;
+
+            }
+            if (bpassword.length > 30 || bpassword.length < 6) {
+                alert("请输入登录6-30位的保险柜密码");
+                return false;
+
+            }
+            if (bpassword != bpassword2) {
+                alert("两次输入的保险柜密码不一致");
+                return false;
+
+            }
+            var safeCode = $("#safecode").val();
+            if (safeCode.length != 4) {
+                alert("请输入验证码");
+                return false;
+            }
+            if (s == 1) {
+                alert("注册中，请稍候..");
+                return false;
+            }
+            s = 1;
+            $.ajax({
+                type: "POST",
+                url: "/Register",
+                data: { login_name: uName, true_name: uRealName, login_pwd: lpassword, login_pwd2: lpassword2, Insure_pwd: bpassword, Insure_pwd2: bpassword2, extra_mobile: mobile, verify_code: safeCode },
+                dataType: "json",
+                success: function (data) {
+                    s = 0;
+                    if (data.State == 1) {
+                        window.location.href = "/success.html";
+                    }
+                    else {
+                        alert(data.Message);
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div style="width:500px; height:100%; margin:0 auto; padding:0; clear:none;">
+
+        <ul style="margin:0; padding:0; background-color:#000;">
+            <li style="width:500px; height:624px; clear:both; margin:0px; padding:0px; text-align:right; ">
+               <a href="#"><img src="images/bl_mobl_01.gif" width="500px" height="400px" alt=""><img src="images/bl_mobl_02.jpg" width="500px" height="224px" alt=""></a> <br>
+			 <li align="center" style="width:500px; margin:-20px auto 0 auto;"><a href="index.html"><img style="border:none;" src="images/button1.jpg"/></a> <a style="margin-left:50px;" href="lianxi.html"><img style="border:none;" src="images/button2.jpg"/></a> </li>
+ <li style="list-style-type:none;width:500px; height:25px;color:#FFFFFF;background:url(images/liback.jpg)">      </li> 
+          </li>
+            <li style="width:500px; height:30px; line-height:30px; clear:both; margin:0px; padding:0px;color:#666; text-align:center;"><img src="images/title.jpg"> </li>
+            <li style="width:350px; height:20px; clear:both; margin:0px auto; padding:0px;color:#CCC; border-bottom:1px solid; font-size:14px;">名字</li>
+			<div style="width:340px; margin:0 auto;">
+            <li style="width:365px; height:35px; clear:both; margin-top:7px; padding:0px;"><div class="shuru-1"><font color="#FF0000">*</font>用户名：</div><div class="shuru-2"><input type="text" name="userName" id="userName" maxlength="16" /></div></li>
+            <li style="width:365px; height:35px; clear:both; margin:0px; padding:0px;"><div class="shuru-1"><font color="#FF0000">*</font>真实姓名：</div><div class="shuru-2"><input type="text" name="realName" id="realName" maxlength="8" /></div></li>
+            <li style="width:365px; height:35px; clear:both; margin:0px; padding:0px;"><div class="shuru-1"><font color="#FF0000">*</font>手机号码：</div><div class="shuru-2"><input type="text" name="mobile" id="mobile" maxlength="11" /></div></li>
+			</div>
+            <li style="width:350px; height:20px; clear:both; margin:0px auto; padding:0px;color:#CCC; border-bottom:1px solid; font-size:14px;">密码</li>
+			<div style="width:340px; margin:0 auto;">
+            <li style="width:365px; height:35px; clear:both;margin-top:7px; padding:0px;"><div class="shuru-1"><font color="#FF0000">*</font>登录密码：</div><div class="shuru-2"><input type="password" name="loginPassword" id="loginPassword" maxlength="30" /></div></li>
+            <li style="width:365px; height:35px; clear:both; margin:0px; padding:0px;"><div class="shuru-1"><font color="#FF0000">*</font>确认密码：</div><div class="shuru-2"><input type="password" name="loginPassword2" id="loginPassword2" maxlength="30" /></div></li>
+            <li style="width:365px; height:35px; clear:both; margin:0px; padding:0px;"><div class="shuru-1"><font color="#FF0000">*</font>保险柜密码：</div><div class="shuru-2"><input type="password" name="bankPassword" id="bankPassword" maxlength="30" /></div></li>
+            <li style="width:365px; height:35px; clear:both; margin:0px; padding:0px;"><div class="shuru-1"><font color="#FF0000">*</font>确认密码：</div><div class="shuru-2"><input type="password" name="bankPassword2" id="bankPassword2" maxlength="30" /></div></li>
+            <li style="width:365px; height:35px; clear:both; margin:0px; padding:0px;"><div class="shuru-1"><font color="#FF0000">*</font>验证码：</div><div class="shuru-2"><input type="text" name="safecode" id="safecode" maxlength="4" style="width:80px;" /><img src="/VerificationCode/VerifCodeImg" id="captcha_img" /><a href="javascript:void(0);" style="font-size:12px; color:black;" onClick="$('#captcha_img').attr('src', '/VerificationCode/VerifCodeImg?' + Math.random())">看不清?</a></div></li>
+			</div>
+            <li style="width:500px; height:70px; clear:both;padding:0px;">
+              <div  style="width:200px; height:70px; margin:10px auto"><a href="javascript:void(0);" onClick="Login();"><img src="images/bnt-1.png"></a></div></li>
+      
+        </ul>
+<a href="reg.html"><img style="margin-top:40px;"  src="images/bl_mobl_08.gif" alt="" width="500" height="410" border="0"></a></div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+	<title></title>
+    <script>
+        var __INFO__ = { total: 10, skinid: 0 }
+        $(document).ready(function () {
+            //$("#newsList").load("/AnnForGame/ann.html");
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                data: "",
+                url: "/AjaxService/GetNewsList",
+
+                success: function (jdata) {
+                    $("#newsList").html(jdata.NewsContent);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="newsList">
+        <h3><span style="font-family: Comic Sans MS;">&nbsp;&nbsp; <span style="color: rgb(255, 0, 255);"><strong><span style="font-size: small;"><span style="font-size: medium;">&prop;<span style="color: rgb(255, 0, 255);">欢迎您</span>&prop;</span></span></strong></span></span></h3>
+        <p><span style="font-size: smaller;"><span style="color: rgb(255, 204, 0);"><strong>实力团队重金打造全新首款<span style="color: rgb(0, 255, 0);">3D</span>画面的棋牌游戏平台、<span style="color: rgb(0, 255, 0);">7x24</span>小时在线服务、<span style="color: rgb(0, 255, 0);">7x24</span>小时出款、提款<span style="color: rgb(0, 255, 0);">5分钟</span>火速到账、黄金级信誉、多款经典游戏、人气火爆、欢迎您的加入！</strong></span></span></p>
+        <p><span style="color: rgb(255, 0, 0);"><span style="font-size: smaller;"><strong>提款通知：</strong></span></span><span style="font-size: smaller;"><strong><span style="color: rgb(255, 204, 0);">受人民银行维护影响、<span style="color: rgb(0, 255, 0);">9月30日16:00<span style="color: rgb(255, 153, 0);">至</span>10月7日16:00</span><span style="color: rgb(255, 204, 0);">期间</span>网上支付跨行清算系统停运、无法跨行转账、在此期间本站兑换只支持工商银行、招商银行！</span></strong></span></p>
+        <p>
+            <span style="font-size: smaller;">
+                <span style="color: rgb(255, 204, 0);"><strong>国庆</strong></span><span style="color: rgb(0, 255, 255);"><strong>10.1-10.7</strong></span><span style="color: rgb(255, 204, 0);"><strong>推出以下活动：</strong></span><br />
+                <span style="color: rgb(255, 102, 0);">
+                    <strong>
+                        <span style="color: rgb(255, 204, 0);">1：</span><span style="color: rgb(255, 204, 0);">首次单笔充值</span><span style="color: rgb(255, 153, 0);"><span style="color: rgb(0, 255, 255);">100</span><span style="color: rgb(255, 204, 0);">元以上送</span><span style="color: rgb(0, 255, 255);">20%<font color="#ffcc00">、</font></span><span style="color: rgb(255, 204, 0);">上不封顶、领取首次充值红利后、必须玩满获取红利的</span><span style="color: rgb(0, 255, 255);">4倍</span></span><span style="color: rgb(255, 204, 0);">局数方可提现！</span><br />
+                        <span style="color: rgb(0, 255, 0);">
+                            <span style="color: rgb(255, 204, 0);">2：</span><span style="color: rgb(255, 204, 0);">牌型奖励每天可领取</span><span style="color: rgb(255, 153, 0);"><span style="color: rgb(0, 255, 255);">10</span></span><span style="color: rgb(255, 204, 0);">次、</span><span style="color: rgb(255, 204, 0);">此任务必须先到活动中心领取后再进行游戏才有效！</span><br />
+                            <span style="color: rgb(255, 204, 0);">3：</span><span style="color: rgb(255, 204, 0);">充值满</span><span style="color: rgb(255, 153, 0);"><span style="color: rgb(0, 255, 255);">100</span><span style="color: rgb(255, 204, 0);">元（含）或以上可抽奖最低</span><span style="color: rgb(0, 255, 255);">2</span><span style="color: rgb(255, 204, 0);">元、充值金额越高抽奖金额越高！</span></span><br />
+                            <span style="color: rgb(255, 204, 0);">4：</span><span style="color: rgb(255, 204, 0);">游戏玩满</span><span style="color: rgb(255, 153, 0);"><span style="color: rgb(0, 255, 255);">50</span><span style="color: rgb(255, 204, 0);">局抽奖</span><span style="color: rgb(0, 255, 255);">2</span></span><span style="color: rgb(255, 204, 0);">元起、房间底分越高奖励金币越多！</span><br />
+                            <span style="color: rgb(255, 204, 0);">5：</span>
+                        </span><span style="color: rgb(255, 204, 0);">每天开启</span><span style="color: rgb(255, 153, 0);"><span style="color: rgb(0, 255, 255);">3</span><span style="color: rgb(255, 204, 0);">场比赛、奖金高达</span><span style="color: rgb(0, 255, 255);">388</span></span><span style="color: rgb(255, 204, 0);">元、详情查看活动中心里的相关信息！</span>
+                    </strong>
+                </span>
+            </span>
+        </p>
+        <p><span style="font-size: smaller;"><strong><span style="color: rgb(255, 204, 0);">6：特别活动之《</span></strong><span style="color: rgb(255, 0, 255);"><strong>奖励</strong></span><span style="color: rgb(255, 153, 0);"><strong><span style="color: rgb(51, 204, 204);">\</span><span style="color: rgb(255, 0, 255);">补贴</span></strong></span><span style="color: rgb(255, 204, 0);"><strong>》</strong></span> </span></p>
+        <p><span style="font-size: smaller;">&nbsp;<span style="color: rgb(255, 153, 0);"><strong>【<span style="color: rgb(0, 255, 0);">奖励</span>】<span style="color: rgb(255, 204, 0);">所有玩家在一天内赢</span><span style="color: rgb(0, 255, 255);">100-299</span><span style="color: rgb(255, 204, 0);">元奖励</span><span style="color: rgb(0, 255, 255);">18</span><span style="color: rgb(255, 204, 0);">元、</span><span style="color: rgb(0, 255, 255);">300-599</span><span style="color: rgb(255, 204, 0);">元奖励</span><span style="color: rgb(0, 255, 255);">38</span><span style="color: rgb(255, 204, 0);">元、</span><span style="color: rgb(0, 255, 255);">600-999</span><span style="color: rgb(255, 204, 0);">元奖励</span><span style="color: rgb(0, 255, 255);">58</span><span style="color: rgb(255, 204, 0);">元、</span><span style="color: rgb(0, 255, 255);">1000-1999</span><span style="color: rgb(255, 204, 0);">奖励</span><span style="color: rgb(0, 255, 255);">88</span><span style="color: rgb(255, 204, 0);">元、</span><span style="color: rgb(0, 255, 255);">2000</span><span style="color: rgb(255, 204, 0);">元</span><span style="color: rgb(255, 204, 0);">以上按</span><span style="color: rgb(0, 255, 255);">8%</span></strong><span style="color: rgb(255, 204, 0);"><strong>奖励！</strong></span></span></span></p>
+        <p><span style="font-size: smaller;"><span style="color: rgb(255, 153, 0);"><strong>【<span style="color: rgb(0, 255, 0);">补贴</span>】<span style="color: rgb(255, 204, 0);">所有玩家在一天内输</span><span style="color: rgb(0, 255, 255);">200-499</span><span style="color: rgb(255, 204, 0);">元补贴</span><span style="color: rgb(0, 255, 255);">20</span><span style="color: rgb(255, 204, 0);">元、</span><span style="color: rgb(0, 255, 255);">500-999</span><span style="color: rgb(255, 204, 0);">元补贴</span><span style="color: rgb(0, 255, 255);">50</span><span style="color: rgb(255, 204, 0);">元、</span><span style="color: rgb(0, 255, 255);">1000-1999</span><span style="color: rgb(255, 204, 0);">补贴</span><span style="color: rgb(0, 255, 255);">100</span><span style="color: rgb(255, 204, 0);">元、</span><span style="color: rgb(0, 255, 255);">2000</span><span style="color: rgb(255, 204, 0);">元以上一律按</span><span style="color: rgb(0, 255, 255);">10%</span><span style="color: rgb(255, 204, 0);">。当天</span><span style="color: rgb(0, 255, 255);">23</span><span style="color: rgb(255, 204, 0);">点</span><span style="color: rgb(0, 255, 255);">30</span><span style="color: rgb(255, 204, 0);">分</span>-<span style="color: rgb(0, 255, 255);">24</span></strong><span style="color: rgb(255, 204, 0);"><strong>点（非此时间段提供不受理）提供游戏帐号给客服结算、给赢钱的玩家奖励的同时也与输钱的的玩家一起分担、恶意手段领取奖励和补贴的后果自负！</strong></span></span></span></p>
+        <p><span style="font-size: smaller;"><span style="color: rgb(255, 102, 0);"><strong>重要提示：</strong></span><span style="color: rgb(255, 204, 0);"><strong>为了您的资金安全、请定时修改<span style="color: rgb(0, 255, 255);">登录密码</span>或<span style="color: rgb(0, 255, 0);">绑定本机</span>登录限制、银行密码请勿与登录密码相同！请勿随意相信第三方提供的信息、如有质疑可直接联系客服、如因您的电脑原因致使游戏账号被盗、本平台概不负责！</strong></span></span></p>
+        <p><span style="font-size: smaller;"><span style="color: rgb(255, 204, 0);"><strong>为了保障游戏环境的公平公正、如有玩家在游戏中合伙</strong></span><span style="color: rgb(0, 255, 0);"><strong>&ldquo;通牌&ldquo;夹牌&rdquo;</strong></span><strong><span style="color: rgb(255, 204, 0);">或</span><span style="color: rgb(0, 255, 0);">&ldquo;刷分&rdquo;</span></strong><span style="color: rgb(255, 204, 0);"><strong>属作弊行为、发现将立即冻结账户所有金币永久封号、无警告处理！</strong></span></span></p>
+        <p><span style="font-size: smaller;"><span style="color: rgb(255, 204, 0);"><strong>网络不稳定的玩家请检查好自己的网络再进行游戏,平台有<span style="color: rgb(0, 255, 0);">断线重连</span>功能,掉线后在指定时间内连接到游戏房间可继续游戏,如个人网络或个人操作引起的损失平台不负责！</strong></span></span></p>
+        <p><span style="color: rgb(255, 0, 0);"><span style="font-size: smaller;"><strong>温馨提示</strong></span></span><span style="font-size: smaller;"><span style="color: rgb(255, 204, 0);"><strong>：为了保障游戏稳定性，接入IP地址为：&ldquo;<span style="color: rgb(0, 255, 0);">香港、美国、北京市、上海市、扬州市、佛山市</span>&rdquo;</strong></span></span></p>
+        <p><span style="font-size: smaller;"><span style="color: rgb(255, 0, 255);"><strong>如有疑问请联系大厅客服中心咨询.</strong></span></span></p>
+    </div>
+</body>
+</html>
