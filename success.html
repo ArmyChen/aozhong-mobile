@@ -85,19 +85,25 @@
     </style>
     <script src="Scripts/jquery-1.10.2.min.js"></script>
     <SCRIPT language=javascript>
-        var secs=3;//3秒
-        for(i=1;i<=secs;i++) 
-        {
-             window.setTimeout("update(" + i + ")", i * 1000);
-        } 
-        function update(num) 
-        { 
-             if(num == secs) 
+        var refer=document.referrer;
+        if(refer.indexOf("reg") < 0){
+             location.href="/reg.html";
+        }else{
+             var secs=3;//3秒
+            for(i=1;i<=secs;i++) 
+            {
+                 window.setTimeout("update(" + i + ")", i * 1000);
+            } 
+            function update(num) 
+            { 
+               $(".success").html("恭喜您，注册成功.." +(secs - num + 1) );
+
+               if(num == secs) 
                 location.href="/";
-             else 
-      
+
+            }
         }
-        </SCRIPT>
+     </SCRIPT>
    
 </head>
 <body huaban_collector_injected="true" style="zoom: 1;">
@@ -111,8 +117,7 @@
           
         </ul>
 </div>
-<p class="success">恭喜您，注册成功</p>
-
+<p class="success">恭喜您，注册成功..</p>
 
 <div id="cntvlive2-is-installed"></div></body>
 
