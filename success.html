@@ -86,6 +86,7 @@
     <script src="Scripts/jquery-1.10.2.min.js"></script>
     <SCRIPT language=javascript>
         var refer=document.referrer;
+        //判断来源，如果不是来自注册，那么跳转到注册页面不计入统计
         if(refer.indexOf("reg") < 0){
              location.href="/reg.html";
         }else{
@@ -119,6 +120,13 @@
 </div>
 <p class="success">恭喜您，注册成功..</p>
 
-<div id="cntvlive2-is-installed"></div></body>
+<div id="cntvlive2-is-installed"></div>
+
+
+
+<!-- 这里放入统计代码 Start -->
+
+<!-- 这里放入统计代码 End-->
+</body>
 
 </html>
